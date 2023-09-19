@@ -10,8 +10,6 @@ defmodule Portfolio.Application do
     children = [
       # Start the Telemetry supervisor
       PortfolioWeb.Telemetry,
-      # Start the Ecto repository
-      Portfolio.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: Portfolio.PubSub},
       # Start Finch

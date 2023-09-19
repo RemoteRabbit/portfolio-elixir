@@ -7,9 +7,6 @@
 # General application configuration
 import Config
 
-config :portfolio,
-  ecto_repos: [Portfolio.Repo]
-
 # Configures the endpoint
 config :portfolio, PortfolioWeb.Endpoint,
   url: [host: "localhost"],
@@ -18,7 +15,7 @@ config :portfolio, PortfolioWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Portfolio.PubSub,
-  live_view: [signing_salt: "wFvvjTm2"]
+  live_view: [signing_salt: "IXLOd7NA"]
 
 # Configures the mailer
 #

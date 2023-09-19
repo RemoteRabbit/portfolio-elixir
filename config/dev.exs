@@ -1,15 +1,5 @@
 import Config
 
-# Configure your database
-config :portfolio, Portfolio.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "portfolio_dev",
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -23,7 +13,7 @@ config :portfolio, PortfolioWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "LcA5cSirAEAZS6TQiXsKxJyBw1iitvuAQDdkHR1rpEW4uuW8sRIe8bb26X6CQLyh",
+  secret_key_base: "aui18gr0024M6WbPjy8pZS6dbX+Prj21hddD7o/Tqe7QLPg7rJKffY30bnGM/FhW",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}

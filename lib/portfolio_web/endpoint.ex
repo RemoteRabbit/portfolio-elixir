@@ -7,7 +7,7 @@ defmodule PortfolioWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_portfolio_key",
-    signing_salt: "RwG6UOo6",
+    signing_salt: "Ey/2+uxW",
     same_site: "Lax"
   ]
 
@@ -29,7 +29,6 @@ defmodule PortfolioWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :portfolio
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
