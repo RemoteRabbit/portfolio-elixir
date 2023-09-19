@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for tristan-jahnke on 2023-09-18T20:22:15-05:00
+# fly.toml app configuration file generated for tristan-jahnke on 2023-09-19T18:15:25-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -9,9 +9,6 @@ kill_signal = "SIGTERM"
 swap_size_mb = 512
 
 [build]
-
-[deploy]
-  release_command = "/app/bin/migrate"
 
 [env]
   PHX_HOST = "tristan-jahnke.fly.dev"
