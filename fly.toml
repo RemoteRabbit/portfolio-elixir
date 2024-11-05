@@ -11,7 +11,7 @@ swap_size_mb = 512
 [build]
 
 [env]
-  PHX_HOST = "tristan-jahnke.fly.dev"
+  PHX_HOST = "remoterabbit.io"
   PORT = "8080"
 
 [http_service]
