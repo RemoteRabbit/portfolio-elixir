@@ -11,6 +11,18 @@ defmodule PortfolioWeb.PageController do
     render(conn, :blog, posts: posts)
   end
 
+  def show_posts(conn, %{"slug" => slug}) do
+    case Blog.get_post_by_slug(slug) do
+      nil ->
+        conn
+        |> put_status(:not_found)
+        |> render("404.html")
+
+      post ->
+        render(conn, :show_posts, post: post)
+    end
+  end
+
   def projects(conn, _params) do
     render(conn, :projects)
   end
