@@ -588,8 +588,23 @@ defmodule PortfolioWeb.CoreComponents do
     """
   end
 
-  ## JS Commands
+  @doc """
+  Shows an element on the page with a transition animation.
 
+  ## Parameters
+
+  - `js` (optional): A `JS` struct representing the JavaScript context. If not provided, a new `JS` struct will be created.
+  - `selector`: A CSS selector string identifying the element(s) to be shown.
+
+  ## Examples
+
+  iex> show(~s(#my-element))
+  %JS{...}
+
+  iex> show(%JS{}, ~s(.my-class))
+  %JS{...}
+
+  """
   def show(js \\ %JS{}, selector) do
     JS.show(js,
       to: selector,
@@ -600,6 +615,23 @@ defmodule PortfolioWeb.CoreComponents do
     )
   end
 
+  @doc """
+  Hides an element on the page with a transition animation.
+
+  ## Parameters
+
+  - `js` (optional): A `JS` struct representing the JavaScript context. If not provided, a new `JS` struct will be created.
+  - `selector`: A CSS selector string identifying the element(s) to be hidden.
+
+  ## Examples
+
+      iex> hide(~s(#my-element))
+      %JS{...}
+
+      iex> hide(%JS{}, ~s(.my-class))
+      %JS{...}
+
+  """
   def hide(js \\ %JS{}, selector) do
     JS.hide(js,
       to: selector,
@@ -611,6 +643,29 @@ defmodule PortfolioWeb.CoreComponents do
     )
   end
 
+  @doc ~S"""
+  Shows a modal dialog with the given `id`.
+
+  This function takes an optional `js` argument, which is a `Phoenix.LiveView.JS` struct
+  that can be used to chain additional JavaScript commands. If no `js` struct is provided,
+  a new one is created.
+
+  The `id` argument is a string that represents the unique identifier of the modal dialog
+  to be shown. It is used to target the corresponding HTML elements in the DOM.
+
+  The function performs the following actions:
+
+    1. Shows the modal dialog element with the given `id`.
+    2. Shows the background overlay element with the ID `#{id}-bg`, applying a transition
+    effect to fade it in.
+    3. Shows the container element with the ID `#{id}-container`.
+    4. Adds the `overflow-hidden` class to the `<body>` element to prevent scrolling while
+    the modal is open.
+    5. Focuses the first focusable element within the modal content area with the ID
+    `#{id}-content`.
+
+  Returns the updated `Phoenix.LiveView.JS` struct with the added JavaScript commands.
+  """
   def show_modal(js \\ %JS{}, id) when is_binary(id) do
     js
     |> JS.show(to: "##{id}")
@@ -618,11 +673,30 @@ defmodule PortfolioWeb.CoreComponents do
       to: "##{id}-bg",
       transition: {"transition-all transform ease-out duration-300", "opacity-0", "opacity-100"}
     )
-    |> show("##{id}-container")
+    |> JS.show(to: "##{id}-container")
     |> JS.add_class("overflow-hidden", to: "body")
     |> JS.focus_first(to: "##{id}-content")
   end
 
+  @doc """
+  Hides a modal by applying CSS transitions and classes to the modal elements.
+
+  This function takes an optional `JS` struct and the `id` of the modal to hide.
+  It returns a new `JS` struct with the necessary operations to hide the modal.
+
+  The modal is hidden by:
+  1. Fading out the background overlay
+  2. Hiding the modal container
+  3. Setting the modal element to `display: hidden`
+  4. Removing the `overflow-hidden` class from the `body` element
+  5. Popping the focus from the modal
+
+  ## Examples
+
+      iex> hide_modal(%JS{}, "my-modal")
+      %JS{...}
+
+  """
   def hide_modal(js \\ %JS{}, id) do
     js
     |> JS.hide(

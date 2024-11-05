@@ -5,8 +5,8 @@ defmodule PortfolioWeb do
 
   This can be used in your application as:
 
-      use PortfolioWeb, :controller
-      use PortfolioWeb, :html
+  use PortfolioWeb, :controller
+  use PortfolioWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -17,8 +17,14 @@ defmodule PortfolioWeb do
   those modules here.
   """
 
+  @doc """
+  Provides the list of static paths for the application.
+  """
   def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
 
+  @doc """
+  Defines a quote for the router.
+  """
   def router do
     quote do
       use Phoenix.Router, helpers: false
@@ -30,12 +36,18 @@ defmodule PortfolioWeb do
     end
   end
 
+  @doc """
+  Defines a quote for channels.
+  """
   def channel do
     quote do
       use Phoenix.Channel
     end
   end
 
+  @doc """
+  Defines a quote for controllers.
+  """
   def controller do
     quote do
       use Phoenix.Controller,
@@ -49,6 +61,9 @@ defmodule PortfolioWeb do
     end
   end
 
+  @doc """
+  Defines a quote for live views.
+  """
   def live_view do
     quote do
       use Phoenix.LiveView,
@@ -58,6 +73,9 @@ defmodule PortfolioWeb do
     end
   end
 
+  @doc """
+  Defines a quote for live components.
+  """
   def live_component do
     quote do
       use Phoenix.LiveComponent
@@ -66,6 +84,9 @@ defmodule PortfolioWeb do
     end
   end
 
+  @doc """
+  Defines a quote for HTML components.
+  """
   def html do
     quote do
       use Phoenix.Component

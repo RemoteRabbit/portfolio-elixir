@@ -9,7 +9,15 @@ defmodule Portfolio.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      # Docs
+      name: "RemoteRabbit Portfolio",
+      source_url: "https://github.com/remoterabbit/portfolio-elixir",
+      homepage_url: "https://www.remoterabbit.io",
+      docs: [
+        main: "Portfolio",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -43,7 +51,9 @@ defmodule Portfolio.MixProject do
       {:tentacat, "~> 2.2"},
       {:earmark, "~> 1.4"},
       {:yaml_front_matter, "~> 1.0"},
-      {:con_cache, "~> 1.0"}
+      {:con_cache, "~> 1.0"},
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false},
+      {:makeup_html, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
