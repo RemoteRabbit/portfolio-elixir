@@ -25,9 +25,9 @@ defmodule Portfolio.Blog do
   """
   def list_posts do
     case ConCache.get_or_store(:blog_cache, :posts, fn ->
-      posts = Portfolio.Blog.Post.fetch_posts("remoterabbit", "blog-posts")
-      %{value: posts, ttl: @cache_ttl}
-    end) do
+           posts = Portfolio.Blog.Post.fetch_posts("remoterabbit", "blog-posts")
+           %{value: posts, ttl: @cache_ttl}
+         end) do
       %{value: posts} -> posts
       posts -> posts
     end
@@ -40,9 +40,9 @@ defmodule Portfolio.Blog do
 
   Returns the blog post struct if found, or `nil` if not found.
   """
-  def get_post_by_slug(slug) do
-    list_posts()
-    |> Enum.find(&(&1.slug == slug))
+  def get_post_by_slug!(slug) do
+    posts = list_posts()
+    Enum.find(posts, fn post -> post.slug == slug end)
   end
 
   @doc """
@@ -58,3 +58,4 @@ defmodule Portfolio.Blog do
     list_posts()
   end
 end
+
