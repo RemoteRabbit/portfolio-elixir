@@ -5,15 +5,17 @@ defmodule Portfolio.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      Portfolio.Repo,
       PortfolioWeb.Telemetry,
       {Phoenix.PubSub, name: Portfolio.PubSub},
       {Finch, name: Portfolio.Finch},
       PortfolioWeb.Endpoint,
-      {ConCache, [
-        name: :blog_cache,
-        ttl_check_interval: :timer.seconds(1),
-        global_ttl: :timer.hours(1)
-      ]}
+      {ConCache,
+       [
+         name: :blog_cache,
+         ttl_check_interval: :timer.seconds(1),
+         global_ttl: :timer.hours(1)
+       ]}
     ]
 
     opts = [strategy: :one_for_one, name: Portfolio.Supervisor]
@@ -26,4 +28,3 @@ defmodule Portfolio.Application do
     :ok
   end
 end
-
