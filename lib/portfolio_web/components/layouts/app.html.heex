@@ -1,30 +1,35 @@
-<header class="text-gray-400 bg-gray-900 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5 hover:text-white" href="/projects">Projects</a>
-      <a class="mr-5 hover:text-white" href="/">Home</a>
-      <a class="mr-5 hover:text-white" href="/blog">Blog</a>
-    </nav>
-  </div>
-</header>
-<main class="">
-  <div class="mx-auto w-full">
-    <.flash_group flash={@flash} />
-    <%= @inner_content %>
-  </div>
-</main>
-<footer class="text-gray-400 bg-gray-900 body-font">
-  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-    <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
-      © 2023 Tristan Jahnke
-      <a
-        href="https://github.com/remoterabbit"
-        class="text-gray-500 ml-1"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        @remoterabbit
-      </a>
-    </p>
-  </div>
-</footer>
+<div class="min-h-screen flex flex-col">
+  <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white" href="/projects">Projects</a>
+        <a class="mr-5 hover:text-white" href="/">Home</a>
+        <a class="mr-5 hover:text-white" href="/blog">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <div class="mx-auto w-full">
+      <.flash_group flash={@flash} />
+      <%= @inner_content %>
+    </div>
+  </main>
+
+  <footer class="text-gray-400 bg-gray-900 body-font mt-auto">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+        © <%= DateTime.utc_now().year %> Tristan Jahnke
+        <a
+          href="https://github.com/remoterabbit"
+          class="text-gray-500 ml-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @remoterabbit
+        </a>
+      </p>
+    </div>
+  </footer>
+</div>
+
