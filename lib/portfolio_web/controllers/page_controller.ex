@@ -46,28 +46,10 @@ defmodule PortfolioWeb.PageController do
     render(conn, :blog, posts: posts)
   end
 
-  @doc """
-  Retrieves a specific blog post by its slug and renders the post page. If the post is not found, it renders a 404 page.
-
-  ## Parameters
-
-  - `conn`: The connection struct.
-  - `%{"slug" => slug}`: A map containing the slug of the blog post.
-
-  ## Returns
-
-  - The rendered post page if the post is found, or a 404 page if the post is not found.
-  """
   def show_posts(conn, %{"slug" => slug}) do
-    case Blog.get_post_by_slug(slug) do
-      nil ->
-        conn
-        |> put_status(:not_found)
-        |> render("404.html")
-
-      post ->
-        render(conn, :show_posts, post: post)
-    end
+    post = Blog.get_post_by_slug!(slug)
+    html_content = Earmark.as_html!(post.content)
+    render(conn, :show_posts, post: %{post | content: html_content})
   end
 
   @doc """

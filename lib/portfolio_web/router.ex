@@ -38,9 +38,14 @@ defmodule PortfolioWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    # Blog
     get "/blog", PageController, :blog
     get "/blog/:slug", PageController, :show_posts
-    get "/projects", PageController, :projects
+
+    # Projects
+    live "/projects", ProjectLive.Index, :index
+    live "/projects/:id", ProjectLive.Show, :show
   end
 
   if Application.compile_env(:portfolio, :dev_routes) do
