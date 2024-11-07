@@ -22,6 +22,50 @@ defmodule Portfolio.Blog.Post do
     |> validate_required([:title, :slug, :context, :published_at])
   end
 
+  @doc """
+  Fetches blog posts from a GitHub repository.
+
+  This function retrieves the contents of a specified directory in a GitHub repository,
+  filters out non-Markdown files, decodes the Base64-encoded content, parses the content,
+  filters out unpublished posts, and sorts the posts by date in descending order.
+
+    ## Parameters
+
+    - `owner` (binary): The owner (user or organization) of the GitHub repository.
+    - `repo` (binary): The name of the GitHub repository.
+    - `path` (binary): The path to the directory containing the blog posts. Defaults to "posts/".
+
+    ## Returns
+
+    - A list of maps representing the parsed blog posts, sorted by date in descending order.
+    Each map contains the following keys:
+    - `:title` (binary): The title of the blog post.
+    - `:date` (Date): The date of the blog post.
+    - `:content` (binary): The content of the blog post.
+    - `:status` (binary): The status of the blog post (e.g., "published", "draft").
+    - `:path` (binary): The path to the Markdown file in the GitHub repository.
+
+  ## Examples
+
+      iex> MyModule.fetch_posts("owner", "repo")
+      [
+        %{
+          title: "My First Post",
+          date: ~D[2023-04-01],
+          content: "This is the content of my first post.",
+          status: "published",
+          path: "posts/my-first-post.md"
+        },
+        %{
+          title: "Another Post",
+          date: ~D[2023-03-15],
+          content: "This is the content of another post.",
+          status: "published",
+          path: "posts/another-post.md"
+        }
+      ]
+
+  """
   def fetch_posts(owner, repo, path \\ "posts/") do
     case Tentacat.Contents.find(owner, repo, path) do
       {200, contents, _} ->
@@ -70,4 +114,3 @@ defmodule Portfolio.Blog.Post do
     end
   end
 end
-
