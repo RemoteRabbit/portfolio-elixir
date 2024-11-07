@@ -56,7 +56,8 @@ defmodule Portfolio.MixProject do
       {:makeup_html, ">= 0.0.0", only: :dev, runtime: false},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"}
+      {:postgrex, ">= 0.0.0"},
+      {:httpoison, "~> 2.0"}
     ]
   end
 
