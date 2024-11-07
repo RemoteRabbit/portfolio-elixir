@@ -21,73 +21,26 @@
         Certifications!
       </h1>
     </div>
-    <div class="flex flex-wrap -m-4 text-center">
-      <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
-        <div class="px-4 py-6 flex items-center justify-center rounded-lg">
-          <div
-            data-iframe-width="250"
-            data-iframe-height="250"
-            data-share-badge-id="beda3bac-baed-4800-93ac-dab37e109c66"
-            data-share-badge-host="https://www.credly.com"
-          >
+
+    <%= if @badges do %>
+      <div class="flex flex-wrap -m-4 text-center">
+        <%= for badge <- @badges["data"] do %>
+          <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
+            <div class="px-4 py-6 flex items-center justify-center rounded-lg">
+              <div
+                data-iframe-width="250"
+                data-iframe-height="250"
+                data-share-badge-id={badge["id"]}
+                data-share-badge-host="https://www.credly.com"
+              >
+              </div>
+            </div>
           </div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
-          </script>
-        </div>
+        <% end %>
       </div>
-      <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
-        <div class="px-4 py-6 flex items-center justify-center rounded-lg">
-          <div
-            data-iframe-width="250"
-            data-iframe-height="250"
-            data-share-badge-id="67017628-d340-4419-9c4f-d714a19609ec"
-            data-share-badge-host="https://www.credly.com"
-          >
-          </div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
-          </script>
-        </div>
-      </div>
-      <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
-        <div class="px-4 py-6 flex items-center justify-center rounded-lg">
-          <div
-            data-iframe-width="250"
-            data-iframe-height="250"
-            data-share-badge-id="952e8274-87ba-4026-a16a-dfe577957352"
-            data-share-badge-host="https://www.credly.com"
-          >
-          </div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
-          </script>
-        </div>
-      </div>
-      <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
-        <div class="px-4 py-6 flex items-center justify-center rounded-lg">
-          <div
-            data-iframe-width="250"
-            data-iframe-height="250"
-            data-share-badge-id="d7e7486f-b75d-4ed0-8eee-eefad911be32"
-            data-share-badge-host="https://www.credly.com"
-          >
-          </div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
-          </script>
-        </div>
-      </div>
-      <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
-        <div class="px-4 py-6 flex items-center justify-center rounded-lg">
-          <div
-            data-iframe-width="250"
-            data-iframe-height="250"
-            data-share-badge-id="e9ea8291-0756-4a4c-9079-ea93efd8f670"
-            data-share-badge-host="https://www.credly.com"
-          >
-          </div>
-          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
-          </script>
-        </div>
-      </div>
-    </div>
+      <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
+      </script>
+    <% end %>
   </div>
 </section>
 
