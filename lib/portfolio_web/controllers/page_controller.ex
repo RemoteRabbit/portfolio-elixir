@@ -26,7 +26,13 @@ defmodule PortfolioWeb.PageController do
   - The rendered home page.
   """
   def home(conn, _params) do
-    render(conn, :home)
+    case Portfolio.Credly.fetch_data() do
+      {:ok, active_badges} ->
+        render(conn, :home, badges: active_badges)
+
+      {:error, _message} ->
+        render(conn, :home, badges: nil)
+    end
   end
 
   @doc """
