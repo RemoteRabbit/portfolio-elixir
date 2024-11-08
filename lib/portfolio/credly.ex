@@ -11,10 +11,26 @@ defmodule Portfolio.Credly do
          status_code: 200,
          body: body
        }} ->
-        {:ok, Jason.decode!(body)}
+        data = Jason.decode!(body)
+        filtered_data = filter_expired_badges(data["data"])
+        {:ok, %{"data" => filtered_data}}
 
       {:error, _} ->
         {:error, "Failed to get Credly badges."}
     end
+  end
+
+  defp filter_expired_badges(badges) do
+    Enum.filter(badges, fn badge ->
+      expires_at = badge["expires_at"]
+
+      if expires_at == nil or
+           NaiveDateTime.compare(NaiveDateTime.from_iso8601!(expires_at), NaiveDateTime.utc_now()) ==
+             :gt do
+        true
+      else
+        false
+      end
+    end)
   end
 end
