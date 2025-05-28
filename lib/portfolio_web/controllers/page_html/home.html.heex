@@ -1,375 +1,258 @@
-<section class="text-silver-400 bg-charcoal body-font">
+<!-- Hero Section -->
+<section class="text-gray-200 bg-gray-900 body-font" role="banner">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-        Hello I'm Tristan Jahnke<br class="hidden lg:inline-block" />a senior platform Engineer
+        Hello I'm Tristan Jahnke<br class="hidden lg:inline-block" />
+        <span class="block">a senior platform Engineer</span>
       </h1>
-      <p class="mb-8 leading-relaxed">
+      <p class="mb-8 leading-relaxed text-gray-100">
         As a Senior Platform Engineer, I have the opportunity to design, build, and maintain workflows and tools for organizations to enable consistency and automate repetitive tasks. My specialties include architecting cloud-native solutions, utilizing infrastructure as code, CI/CD automation, containerization, and improving observability across enterprise-scale applications. Not only is my work relevant, but it also keeps me sharp and continuously learning in a space that is evolving rapidly. We embrace change, appreciate variety, and thrive in solving complex business problems with Platform Engineering.
       </p>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img class="object-cover object-center rounded" alt="hero" src="images/lego_garden.jpeg" />
+      <img
+        class="object-cover object-center rounded"
+        alt="Lego garden scene representing creativity and engineering mindset"
+        src="images/lego_garden.jpeg"
+        loading="lazy"
+        width="500"
+        height="400"
+      />
     </div>
   </div>
 </section>
 
-<section>
-  <div
-    x-data="{}"
-    x-init="$nextTick(() => {
-    let ul = $refs.logos;
-    let clone = ul.cloneNode(true);
-    ul.parentNode.appendChild(clone);
-    clone.setAttribute('aria-hidden', 'true');
-    })"
-    class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
-  >
-    <ul
-      x-ref="logos"
-      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-[100px] animate-infinite-scroll"
+<!-- Company Logos Section - Fixed infinite scroll -->
+<section aria-labelledby="companies-heading" class="py-8 bg-white">
+  <h2 id="companies-heading" class="sr-only">Companies I've worked with</h2>
+
+  <!-- Reduced motion version -->
+  <div class="motion-reduce:block hidden">
+    <div class="container mx-auto px-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
+        <img src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712" alt="The Minnesota Star Tribune" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://logodix.com/logo/916862.png" alt="Sun Country Airlines" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="Medtronic" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg" alt="CVS Health" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg" alt="The Wendy's Company" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="Sailpoint" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png" alt="Minnesota Public Radio" class="max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp" alt="Improving" class="max-w-[100px] h-auto" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated version for users who prefer motion -->
+  <div class="motion-reduce:hidden block w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+    <div
+      class="flex animate-infinite-scroll"
+      role="img"
+      aria-label="Scrolling logos of companies I've worked with"
     >
-      <li>
-        <img
-          src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712"
-          alt="The Minnesota Star Tribune"
-        />
-      </li>
-      <li>
-        <img src="https://logodix.com/logo/916862.png" alt="Sun Country Airlines" />
-      </li>
-      <li>
-        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="Medtronic" />
-      </li>
-      <li>
-        <img
-          src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg"
-          alt="CVS Health"
-        />
-      </li>
-      <li>
-        <img
-          src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg"
-          alt="The Wendy's Company"
-        />
-      </li>
-      <li>
-        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="Sailpoint" />
-      </li>
-      <li>
-        <img
-          src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png"
-          alt="Minnesota Public Radio"
-        />
-      </li>
-      <li>
-        <img
-          src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp"
-          alt="Improving"
-        />
-      </li>
-    </ul>
-    <ul
-      x-ref="logos"
-      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-[100px] animate-infinite-scroll"
-    >
-      <li>
-        <img
-          src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712"
-          alt="The Minnesota Star Tribune"
-        />
-      </li>
-      <li>
-        <img src="https://logodix.com/logo/916862.png" alt="Sun Country Airlines" />
-      </li>
-      <li>
-        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="Medtronic" />
-      </li>
-      <li>
-        <img
-          src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg"
-          alt="CVS Health"
-        />
-      </li>
-      <li>
-        <img
-          src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg"
-          alt="The Wendy's Company"
-        />
-      </li>
-      <li>
-        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="Sailpoint" />
-      </li>
-      <li>
-        <img
-          src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png"
-          alt="Minnesota Public Radio"
-        />
-      </li>
-      <li>
-        <img
-          src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp"
-          alt="Improving"
-        />
-      </li>
-    </ul>
-    <ul
-      x-ref="logos"
-      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-[100px] animate-infinite-scroll"
-    >
-      <li>
-        <img
-          src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712"
-          alt="The Minnesota Star Tribune"
-        />
-      </li>
-      <li>
-        <img src="https://logodix.com/logo/916862.png" alt="Sun Country Airlines" />
-      </li>
-      <li>
-        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="Medtronic" />
-      </li>
-      <li>
-        <img
-          src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg"
-          alt="CVS Health"
-        />
-      </li>
-      <li>
-        <img
-          src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg"
-          alt="The Wendy's Company"
-        />
-      </li>
-      <li>
-        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="Sailpoint" />
-      </li>
-      <li>
-        <img
-          src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png"
-          alt="Minnesota Public Radio"
-        />
-      </li>
-      <li>
-        <img
-          src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp"
-          alt="Improving"
-        />
-      </li>
-    </ul>
+      <!-- First set of logos -->
+      <div class="flex items-center justify-center shrink-0">
+        <img src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712" alt="The Minnesota Star Tribune" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://logodix.com/logo/916862.png" alt="Sun Country Airlines" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="Medtronic" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg" alt="CVS Health" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg" alt="The Wendy's Company" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="Sailpoint" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png" alt="Minnesota Public Radio" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp" alt="Improving" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="flex items-center justify-center shrink-0" aria-hidden="true">
+        <img src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://logodix.com/logo/916862.png" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="flex items-center justify-center shrink-0" aria-hidden="true">
+        <img src="https://arc.stimg.co/startribunemedia/YGWO7B3GYJA4FHCOLM2HDKZUBE.png?&w=712" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://logodix.com/logo/916862.png" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/Medtronic/Medtronic-Logo.wine.svg" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/CVS_Health/CVS_Health-Vertical-Logo.wine.svg" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://www.logo.wine/a/logo/The_Wendy's_Company/The_Wendy's_Company-Logo.wine.svg" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://grafana.com/static/img/logos/logo-sailpoint.png" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://zsyst.com/wp-content/uploads/2020/12/MPR-Logo.png" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+        <img src="https://images.ctfassets.net/0vvalmm98slw/3m0ne7YknykIbtH8Wz8C48/a9bf4651dcc408dbaf4ae1353f14992d/improving-flat_blue_improving-flat_blue.png?w=2413&h=1222&q=100&fm=webp" alt="" class="mx-8 max-w-[100px] h-auto" loading="lazy" />
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="text-silver-600 bg-anti-flash_white body-font">
+<!-- Certifications Section - Fixed contrast -->
+<section class="text-gray-800 bg-gray-50 body-font" aria-labelledby="certifications-heading">
   <div class="container px-5 py-10 mx-auto">
     <div class="flex flex-col text-center w-full">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-charcoal">
+      <h2 id="certifications-heading" class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
         Certifications!
-      </h1>
+      </h2>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700 mb-8">
+        Professional certifications and credentials that validate my expertise in cloud platforms, DevOps practices, and platform engineering.
+      </p>
     </div>
-
     <%= if @badges do %>
-      <div class="flex flex-wrap justify-center -m-4 text-center">
+      <div class="flex flex-wrap justify-center -m-4 text-center" role="list" aria-label="Professional certifications">
         <%= for badge <- @badges["data"] do %>
-          <div class="p-4 md:w-1/5 sm:w-1/2 w-full">
-            <div class="px-4 py-6 flex items-center justify-center rounded-lg">
+          <div class="p-4 md:w-1/5 sm:w-1/2 w-full" role="listitem">
+            <div class="px-4 py-6 flex items-center justify-center rounded-lg bg-white border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500">
               <div
                 data-iframe-width="250"
                 data-iframe-height="250"
                 data-share-badge-id={badge["id"]}
                 data-share-badge-host="https://www.credly.com"
-              >
+                role="img"
+                aria-label={"Professional certification badge: #{badge["name"] || "Certification"}"}>
               </div>
             </div>
           </div>
         <% end %>
       </div>
-      <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js">
-      </script>
+      <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    <% else %>
+      <div class="text-center py-12">
+        <div class="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gray-200" aria-hidden="true">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8 text-gray-600" viewBox="0 0 24 24" role="img" aria-label="Certificate icon">
+            <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">Certifications Loading</h3>
+        <p class="text-gray-700">Professional certifications are being loaded...</p>
+      </div>
     <% end %>
   </div>
 </section>
 
-<section class="text-gray-600 body-font">
+<!-- Skills Section -->
+<section class="text-gray-700 body-font bg-white" aria-labelledby="skills-heading">
   <div class="container px-5 py-24 mx-auto">
     <div class="text-center mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium text-gray-900 mb-4">What I Like to Work On</h1>
-      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+      <h2 id="skills-heading" class="sm:text-3xl text-2xl font-medium text-gray-900 mb-4">What I Like to Work On</h2>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-600">
         Here are some of the areas I enjoy working on and have expertise in.
       </p>
     </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z">
-              </path>
+
+    <div class="flex flex-wrap -m-4" role="list" aria-label="Technical expertise areas">
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-blue-600" viewBox="0 0 24 24" role="img" aria-label="Cloud icon">
+              <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">Cloud</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">Cloud</h3>
+          <p class="leading-relaxed text-gray-600">
             Whether you're moving to the cloud or moving around the cloud, I have the knowledge to get you to your destination.
           </p>
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 9V9m-1 4H9m-5 4v1a2 2 0 002 2h10a2 2 0 002-2v-1m-9-4h4">
-              </path>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-green-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-green-600" viewBox="0 0 24 24" role="img" aria-label="CI/CD pipeline icon">
+              <path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 9V9m-1 4H9m-5 4v1a2 2 0 002 2h10a2 2 0 002-2v-1m-9-4h4"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">CI/CD</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">CI/CD</h3>
+          <p class="leading-relaxed text-gray-600">
             I've built pipelines in everything from GitHub Actions to bash scripts and everything in between (though I prefer GitLab pipelines).
           </p>
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
+
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-purple-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-purple-600" viewBox="0 0 24 24" role="img" aria-label="Container icon">
               <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">Containerization</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">Containerization</h3>
+          <p class="leading-relaxed text-gray-600">
             With a focus on cutting costs and improving simplicity, I strive to containerize much of what I do, with a focus on Docker.
           </p>
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
-              </path>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-orange-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-orange-600" viewBox="0 0 24 24" role="img" aria-label="Automation icon">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">Automation</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">Automation</h3>
+          <p class="leading-relaxed text-gray-600">
             People sometimes make mistakes, so let's try to minimize them with automation. From automating new developer setups to automating workflows.
           </p>
         </div>
       </div>
     </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
-              </path>
+
+    <!-- Second row of skills -->
+    <div class="flex flex-wrap -m-4 mt-4" role="list" aria-label="Additional technical expertise areas">
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-cyan-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-cyan-600" viewBox="0 0 24 24" role="img" aria-label="CDN network icon">
+              <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">CDN</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">CDN</h3>
+          <p class="leading-relaxed text-gray-600">
             Leveraging Content Delivery Networks (CDNs) to improve website performance and reduce latency for users worldwide.
           </p>
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
+
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-yellow-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-yellow-600" viewBox="0 0 24 24" role="img" aria-label="Application modernization icon">
               <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">Application Modernization</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">Application Modernization</h3>
+          <p class="leading-relaxed text-gray-600">
             Migrating and modernizing legacy applications to leverage modern architectures, technologies, and best practices.
           </p>
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
+
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-pink-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-pink-600" viewBox="0 0 24 24" role="img" aria-label="API icon">
               <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">APIs</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">APIs</h3>
+          <p class="leading-relaxed text-gray-600">
             Designing, building, and integrating APIs to enable seamless communication between applications and services.
           </p>
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-              </path>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full" role="listitem">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-red-100" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6 text-red-600" viewBox="0 0 24 24" role="img" aria-label="Developer tools icon">
+              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
             </svg>
           </div>
-          <h2 class="title-font font-medium text-lg text-gray-900">Developer Tooling</h2>
-          <p class="leading-relaxed">
+          <h3 class="title-font font-medium text-lg text-gray-900 mb-2">Developer Tooling</h3>
+          <p class="leading-relaxed text-gray-600">
             Developing tools and utilities to streamline development workflows, improve productivity, and enhance the developer experience.
           </p>
         </div>
@@ -378,92 +261,71 @@
   </div>
 </section>
 
-<section class="text-silver-600 bg-anti-flash_white body-font">
+<!-- Technologies Section -->
+<section class="text-gray-700 bg-gray-50 body-font" aria-labelledby="technologies-heading">
   <div class="container px-5 py-10 mx-auto">
-    <div class="flex flex-col text-center w-full">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-charcoal">
+    <div class="flex flex-col text-center w-full mb-8">
+      <h2 id="technologies-heading" class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
         Software and Tools
-      </h1>
-      <div class="flex flex-wrap -m-4">
-        <div class="p-4 md:w-1/3">
-          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-            <div class="flex items-center mb-3">
-              <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
-              </div>
-              <h2 class="text-gray-900 text-lg title-font font-medium">Programming Languages</h2>
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap -m-4" role="list" aria-label="Technical skills and tools">
+      <div class="p-4 md:w-1/3" role="listitem">
+        <div class="flex rounded-lg h-full bg-white p-8 flex-col focus-within:ring-2 focus-within:ring-blue-500 border border-gray-200 hover:border-gray-300 transition-colors">
+          <div class="flex items-center mb-3">
+            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-600 text-white flex-shrink-0" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" role="img" aria-label="Programming languages icon">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
             </div>
-            <div class="flex-grow">
-              <p class="text-gray-900 leading-relaxed text-base">
-                Python, Ruby, Go, Elixir, Erlang, R, SQL, Bash, Lua, and more.
-              </p>
-            </div>
+            <h3 class="text-gray-900 text-lg title-font font-medium">Programming Languages</h3>
+          </div>
+          <div class="flex-grow">
+            <p class="text-gray-600 leading-relaxed text-base">
+              Python, Ruby, Go, Elixir, Erlang, R, SQL, Bash, Lua, and more.
+            </p>
           </div>
         </div>
-        <div class="p-4 md:w-1/3">
-          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-            <div class="flex items-center mb-3">
-              <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <h2 class="text-gray-900 text-lg title-font font-medium">Web Technologies</h2>
+      </div>
+
+      <div class="p-4 md:w-1/3" role="listitem">
+        <div class="flex rounded-lg h-full bg-white p-8 flex-col focus-within:ring-2 focus-within:ring-blue-500 border border-gray-200 hover:border-gray-300 transition-colors">
+          <div class="flex items-center mb-3">
+            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-600 text-white flex-shrink-0" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" role="img" aria-label="Web technologies icon">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
             </div>
-            <div class="flex-grow">
-              <p class="text-gray-900 leading-relaxed text-base">
-                HTML, CSS, Flask, Django, Ruby on Rails, Phoenix, Liveview, and more.
-              </p>
-            </div>
+            <h3 class="text-gray-900 text-lg title-font font-medium">Web Technologies</h3>
+          </div>
+          <div class="flex-grow">
+            <p class="text-gray-600 leading-relaxed text-base">
+              HTML, CSS, Flask, Django, Ruby on Rails, Phoenix, Liveview, and more.
+            </p>
           </div>
         </div>
-        <div class="p-4 md:w-1/3">
-          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-            <div class="flex items-center mb-3">
-              <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
-              </div>
-              <h2 class="text-gray-900 text-silver-600text-lg title-font font-medium">
-                Databases
-              </h2>
+      </div>
+
+      <div class="p-4 md:w-1/3" role="listitem">
+        <div class="flex rounded-lg h-full bg-white p-8 flex-col focus-within:ring-2 focus-within:ring-blue-500 border border-gray-200 hover:border-gray-300 transition-colors">
+          <div class="flex items-center mb-3">
+            <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-600 text-white flex-shrink-0" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" role="img" aria-label="Database technologies icon">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
             </div>
-            <div class="flex-grow">
-              <p class="text-gray-900 leading-relaxed text-base">
-                PostgreSQL, MySQL, MongoDB, Redis, Cassandra, Elasticsearch, and more.
-              </p>
-            </div>
+            <h3 class="text-gray-900 text-lg title-font font-medium">Databases</h3>
+          </div>
+          <div class="flex-grow">
+            <p class="text-gray-600 leading-relaxed text-base">
+              PostgreSQL, MySQL, MongoDB, Redis, Cassandra, Elasticsearch, and more.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+

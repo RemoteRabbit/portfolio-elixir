@@ -2,5 +2,135 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* This file is for your main application CSS */
+/* ==========================================================================
+   ACCESSIBILITY UTILITIES
+   ========================================================================== */
 
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible for skip links */
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ==========================================================================
+   ANIMATIONS & MOTION
+   ========================================================================== */
+
+/* Infinite scroll animation */
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Motion preferences - consolidated */
+@media (prefers-reduced-motion: reduce) {
+  .animate-infinite-scroll {
+    animation: none;
+    transform: translateX(0) !important;
+  }
+
+  .motion-reduce\:block {
+    display: block !important;
+  }
+
+  .motion-reduce\:hidden {
+    display: none !important;
+  }
+
+  /* Global motion reduction */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Default motion preference classes */
+.motion-reduce\:hidden {
+  display: block;
+}
+
+.motion-reduce\:block {
+  display: none;
+}
+
+/* ==========================================================================
+   CONTRAST & ACCESSIBILITY FIXES
+   ========================================================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .border-gray-200 {
+    border-color: #000000;
+    border-width: 2px;
+  }
+
+  .text-gray-600 {
+    color: #000000;
+  }
+
+  .bg-gray-50 {
+    background-color: #ffffff;
+  }
+}
+
+/* Fix Credly embed contrast issues */
+[data-share-badge-host] *,
+[class*="credly"] * {
+  color: #374151 !important; /* gray-700 - WCAG AA compliant */
+}
+
+[data-share-badge-host] a,
+[class*="credly"] a {
+  color: #1d4ed8 !important; /* blue-700 */
+  text-decoration: underline !important;
+}
+
+[data-share-badge-host] a:hover,
+[data-share-badge-host] a:focus,
+[class*="credly"] a:hover,
+[class*="credly"] a:focus {
+  color: #1e40af !important; /* blue-800 */
+}
+
+/* Target specific Credly attribution text */
+.credly-powered-by,
+.credly-attribution,
+[class*="credly"] small,
+[id*="credly"] small {
+  color: #374151 !important;
+  font-size: 0.875rem !important;
+}
+
+/* Override any problematic inline styles */
+[data-share-badge-host] [style*="color: #999"],
+[data-share-badge-host] [style*="color: #aaa"],
+[data-share-badge-host] [style*="color: #bbb"],
+[data-share-badge-host] [style*="color: #ccc"] {
+  color: #374151 !important;
+}
