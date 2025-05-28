@@ -1,32 +1,72 @@
 <div class="min-h-screen flex flex-col">
-  <header class="text-gray-400 bg-gray-900 body-font">
+  <!-- Skip navigation link for keyboard users -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50 focus:z-50"
+  >
+    Skip to main content
+  </a>
+
+  <header class="text-gray-200 bg-gray-900 body-font" role="banner">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-white" href="/projects">Projects</a>
-        <a class="mr-5 hover:text-white" href="/">Home</a>
-        <a class="mr-5 hover:text-white" href="/blog">Blog</a>
+      <nav
+        class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <a
+          class="mr-5 text-gray-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2 py-1 transition-colors"
+          href="/projects"
+          aria-label="View projects page"
+        >
+          Projects
+        </a>
+        <a
+          class="mr-5 text-gray-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2 py-1 transition-colors"
+          href="/"
+          aria-label="Go to home page"
+        >
+          Home
+        </a>
+        <a
+          class="mr-5 text-gray-200 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2 py-1 transition-colors"
+          href="/blog"
+          aria-label="Read blog posts"
+        >
+          Blog
+        </a>
       </nav>
     </div>
   </header>
 
-  <main class="flex-grow">
+  <main
+    class="flex-grow"
+    role="main"
+    id="main-content"
+    tabindex="-1"
+  >
     <div class="mx-auto w-full">
       <.flash_group flash={@flash} />
       <%= @inner_content %>
     </div>
   </main>
 
-  <footer class="text-gray-400 bg-gray-900 body-font mt-auto">
+  <footer
+    class="text-gray-200 bg-gray-900 body-font mt-auto"
+    role="contentinfo"
+  >
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+      <p class="text-sm text-gray-200 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-700 sm:py-2 sm:mt-0 mt-4">
         © <%= DateTime.utc_now().year %> Tristan Jahnke
         <a
           href="https://github.com/remoterabbit"
-          class="text-gray-500 ml-1"
+          class="text-gray-100 ml-1 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-1 py-0.5 transition-colors underline decoration-gray-400 hover:decoration-white focus:decoration-white"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visit Tristan Jahnke's GitHub profile (opens in new tab)"
         >
           @remoterabbit
+          <span class="sr-only">(opens in new tab)</span>
         </a>
       </p>
     </div>
