@@ -49,14 +49,12 @@ defmodule Portfolio.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:tentacat, "~> 2.2"},
-      {:earmark, "~> 1.4"},
+      {:earmark, "1.4.48"},
       {:yaml_front_matter, "~> 1.0"},
       {:con_cache, "~> 1.0"},
       {:ex_doc, "~> 0.34", only: :dev, runtime: false},
       {:makeup_html, ">= 0.0.0", only: :dev, runtime: false},
-      {:phoenix_ecto, "~> 4.4"},
-      {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
+
       {:httpoison, "~> 2.0"}
     ]
   end

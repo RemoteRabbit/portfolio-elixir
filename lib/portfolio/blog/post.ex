@@ -1,26 +1,8 @@
 defmodule Portfolio.Blog.Post do
-  use Ecto.Schema
-  import Ecto.Changeset
-
-  schema "posts" do
-    field(:context, :string)
-    field(:title, :string)
-    field(:slug, :string)
-    field(:published_at, :naive_datetime)
-    field(:content, :string, virtual: true)
-    field(:date, :date, virtual: true)
-    field(:description, :string, virtual: true)
-    field(:status, :string, virtual: true)
-
-    timestamps()
-  end
-
-  @doc false
-  def changeset(post, attrs) do
-    post
-    |> cast(attrs, [:title, :slug, :context, :published_at])
-    |> validate_required([:title, :slug, :context, :published_at])
-  end
+  @doc """
+  Struct representing a blog post with all necessary fields.
+  """
+  defstruct [:title, :slug, :content, :date, :description, :status]
 
   @doc """
   Fetches blog posts from a GitHub repository.

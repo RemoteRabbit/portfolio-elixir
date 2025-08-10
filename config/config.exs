@@ -7,7 +7,7 @@
 # General application configuration
 import Config
 
-config :portfolio, ecto_repos: [Portfolio.Repo]
+
 
 # Configures the endpoint
 config :portfolio, PortfolioWeb.Endpoint,

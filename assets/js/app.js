@@ -33,6 +33,35 @@ window.addEventListener("phx:page-loading-stop", _info => topbar.hide())
 // connect if there are any LiveViews on the page
 liveSocket.connect()
 
+// Dark mode toggle functionality
+function initDarkMode() {
+  const darkModeToggle = document.getElementById('darkModeToggle')
+  const html = document.documentElement
+  
+  // Check for saved theme preference or default to light mode
+  const savedTheme = localStorage.getItem('theme') || 'light'
+  
+  if (savedTheme === 'dark') {
+    html.classList.add('dark')
+  }
+  
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark')
+      
+      // Save preference
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark')
+      } else {
+        localStorage.setItem('theme', 'light')
+      }
+    })
+  }
+}
+
+// Initialize dark mode when DOM is loaded
+document.addEventListener('DOMContentLoaded', initDarkMode)
+
 // expose liveSocket on window for web console debug logs and latency simulation:
 // >> liveSocket.enableDebug()
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session

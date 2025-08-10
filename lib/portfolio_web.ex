@@ -113,6 +113,28 @@ defmodule PortfolioWeb do
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())
+
+      # Custom helper functions
+      def estimate_reading_time(content) when is_binary(content) do
+        word_count = content |> String.split() |> length()
+        reading_time = (word_count / 200) |> Float.round() |> trunc()
+        max(reading_time, 1)
+      end
+
+      def estimate_reading_time(_), do: 1
+
+      def truncate_text(text, max_length) when is_binary(text) do
+        if String.length(text) <= max_length do
+          text
+        else
+          text
+          |> String.slice(0, max_length)
+          |> String.trim()
+          |> Kernel.<>("...")
+        end
+      end
+
+      def truncate_text(text, _), do: text
     end
   end
 
